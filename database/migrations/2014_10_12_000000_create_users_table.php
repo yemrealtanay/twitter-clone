@@ -16,8 +16,13 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('nickname')->unique();
             $table->string('email')->unique();
-            $table->date('birth_date');
+            $table->boolean('isAdmin')->default(false);
+            $table->date('birth_date');                 // Year-Month-Day format
+            $table->text('bio');
+            $table->string('image_path');               // For profile picture (avatar)
+            $table->string('website')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
