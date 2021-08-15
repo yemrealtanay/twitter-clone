@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1879669a233f4d4033e516789500d73a",
+    "content-hash": "35e25d5e65f7f297f5098e52ca2f51a9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -877,6 +877,73 @@
                 "source": "https://github.com/guzzle/psr7/tree/2.0.0"
             },
             "time": "2021-06-30T20:03:07+00:00"
+        },
+        {
+            "name": "hypefactors/laravel-follow",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hypefactors/laravel-follow.git",
+                "reference": "aceebc7b6fc1af3db54aa8588e511496bde9955b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hypefactors/laravel-follow/zipball/aceebc7b6fc1af3db54aa8588e511496bde9955b",
+                "reference": "aceebc7b6fc1af3db54aa8588e511496bde9955b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "hypefactors/php-code-standards": "^1.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "7.0.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Hypefactors\\Laravel\\Follow\\FollowServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hypefactors\\Laravel\\Follow\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Hypefactors A/S",
+                    "email": "support@hypefactors.com",
+                    "homepage": "https://hypefactors.com"
+                }
+            ],
+            "description": "Laravel 8 Follow System for Eloquent models.",
+            "homepage": "https://hypefactors.com",
+            "keywords": [
+                "Follow",
+                "hypefactors",
+                "laravel",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/hypefactors/laravel-follow/issues",
+                "source": "https://github.com/hypefactors/laravel-follow/tree/v7.0.0"
+            },
+            "time": "2020-09-26T22:14:11+00:00"
         },
         {
             "name": "laravel/framework",
