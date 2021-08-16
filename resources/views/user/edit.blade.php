@@ -74,13 +74,26 @@
                 <div class="col-6">
                     <!-- Profile Edit Content -->
 
-                    <form action="{{ route('users.update' $user) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('users.update', $user) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="m-5">
-                            <label for="nickname">Edit Your Nickname</label>
-                        </div>
-                            <input class="form-control form-control-lg" type="text" placeholder="{{ $user->nickname }}">
-                        
+                        @method('PUT')
+                       
+                        <label for="nickname" class="mt-3">Edit Your Nickname</label>
+                       <input class="form-control form-control-lg" type="text" name="nickname" placeholder="{{ $user->nickname }}">
+                       
+                       <label for="bio" class="mt-3">Bio</label>
+                       <textarea class="form-control" id="textarea" name="bio" rows="3"></textarea>
+                       
+                       <label for="website" class="mt-3">Web Address</label>
+                       <input class="form-control form-control-lg" type="text" name="website">
+                       
+                       <label for="avatar" class="mt-3">Upload Avatar</label>
+                       <input type="file" class="form-control-file" id="file_avatar" name="avatar" accept="image/*">
+                       
+                       <label for="bgimg" class="mt-3">Upload Background</label>
+                       <input type="file" class="form-control-file" id="file_bg" name="bgimg" accept="image/*">
+
+                       <button type="submit" class="btn btn-primary mt-3">Update</button>
                     </form>
 
                     
