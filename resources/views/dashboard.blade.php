@@ -58,28 +58,31 @@
                     <!-- Left column -->
                     <div class="profile-header">
                         <!-- Header information -->
-                        <h3 class="profile-fullname"><a> {{ Auth::user()->name }} <a></h3>
-                        <h2 class="profile-element"><a>{{ Auth::user()->nickname}} </a></h2>
+                        <h3 class="profile-fullname"><a> {{ Auth::user()->name }}<a></h3>
+                        <h2 class="profile-element"><a>{{ Auth::user()->nickname }} </a></h2>
                         <a class="profile-element profile-website" hrerf=""><i
                                 class="octicon octicon-link"></i>{{ Auth::user()->email }} </a>
                         <a class="profile-element profile-website" hrerf=""><i
                                 class="octicon octicon-location"></i>&nbsp;Vitoria-Gasteiz, Spain</a>
                         <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined November 2012</h2>
-                        
-                        
+
+
                     </div>
                 </div>
                 <!-- End; Left column -->
                 <!-- Center content column -->
                 <div class="col-6">
-                    <form>
-                    <div class="form-group">
-
-                        <label class="text-bold m-2 text-xl text-gray-800" for="tweetFormControlTextarea1">Lets Tweet!</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        <button class="btn btn-search-bar m-3">Tweet</button>
-                    </div>
-                      
+                    <form action="">
+                        <div class="form-group">
+                            <div class="">
+                                <label class="text-bold m-2 text-xl text-gray-800" for="tweetFormControlTextarea1">Lets
+                                    Tweet!</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end my-1">
+                                <button class="btn btn-search-bar">Tweet</button>
+                            </div>
+                        </div>
                     </form>
 
                     <ol class="tweet-list">
@@ -123,7 +126,7 @@
                                 </div>
                             </div>
                         </li>
-                        
+
                     </ol>
                     <!-- End: tweet list -->
                 </div>

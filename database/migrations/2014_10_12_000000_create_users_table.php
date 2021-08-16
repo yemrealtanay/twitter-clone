@@ -19,10 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('nickname')->unique();
             $table->string('email')->unique();
             $table->boolean('isAdmin')->default(false);
-            $table->date('birth_date');                 // Year-Month-Day format
-            $table->text('bio');
-            $table->string('image_path');               // For profile picture (avatar)
-            $table->string('bg_image_path');               // For profile background (bg)
+            $table->date('birth_date')->nullable();                 // Year-Month-Day format
+            $table->text('bio')->nullable();
+            $table->string('image_path')->nullable();               // For profile picture (avatar)
+            $table->string('bg_image_path')->nullable();               // For profile background (bg)
             $table->string('website')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
