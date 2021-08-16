@@ -65,7 +65,7 @@
                         <a class="profile-element profile-website" hrerf=""><i
                                 class="octicon octicon-location"></i>&nbsp;Vitoria-Gasteiz, Spain</a>
                         <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined November 2012</h2>
-                        <a href="{{ route('users.edit', Auth::user()) }}" class="profile-element profile-website">Profilini Düzenle</a>
+                        <a href="{{ route('users.edit', Auth::user()->id ) }}" class="profile-element profile-website">Profilini Düzenle</a>
 
 
                     </div>

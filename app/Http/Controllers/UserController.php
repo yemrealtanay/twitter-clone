@@ -77,8 +77,8 @@ class UserController extends Controller
         $img = $request->file('avatar');
         $bgimg = $request->file('bgimg');
 
-        $newAvatarName = uniqid() . '.' . $user->nickname . '.' . $img->getClientOriginalExtension();
-        $newBgimgName = uniqid() . '.' . $user->nickname . '.' . $bgimg->getClientOriginalExtension();
+        $newAvatarName = uniqid() . '.' . $request->nickname . '.' . $img->getClientOriginalExtension();
+        $newBgimgName = uniqid() . '.' . $request->nickname . '.' . $bgimg->getClientOriginalExtension();
 
         $destinationPath = public_path('images');
 
@@ -87,7 +87,6 @@ class UserController extends Controller
 
         $user->nickname = $request->nickname;
         $user->bio = $request->bio;
-        $user->date = $request->date;
         $user->website = $request->website;
         $user->image_path = $newAvatarName;
         $user->bgimg_path = $newBgimgName;
