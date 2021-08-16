@@ -74,7 +74,7 @@ body {
   
   .profile-background {
     height: 320px;
-    background-image: url('https://pbs.twimg.com/profile_banners/439335622/1496682615/1500x500');
+    
   }
   
   /* Main avatar */
@@ -88,7 +88,6 @@ body {
   
   .avatar {
     background: #fff;
-    background-image: url(https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_400x400.jpg);
     border: 5px solid #fff;
     border-radius: 50%;
     height: 200px;

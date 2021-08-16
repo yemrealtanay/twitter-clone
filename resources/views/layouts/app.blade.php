@@ -28,7 +28,7 @@
         
 
         <!-- Page Content -->
-        <main class="container my-5">
+        <main class="container">
             {{ $slot }}
         </main>
     </body>

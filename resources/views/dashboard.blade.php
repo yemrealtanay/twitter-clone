@@ -1,16 +1,20 @@
 <x-app-layout>
     <div class="main-container">
-        <!-- USER PROFILE BACKGROUND -->
+        
         <div class="row profile-background">
-            <div class="container">
-                <!-- User AVATAR -->
-                <div class="avatar-container">
-                    <div class="avatar">
-
-                    </div>
-                </div>
+            <img class="max-h-350 max-w-1200" src="https://source.unsplash.com/1200x350" alt="">
+          <div class="container">
+            
+            <div class="avatar-container">
+              <div class="avatar">
+                <img class="max-h-350 max-w-1200" src="https://source.unsplash.com/350x350" alt="">
+              </div>
             </div>
+          </div>
         </div>
+        
+    
+            
 
         <nav class="navbar profile-stats">
             <div class="container">
@@ -65,7 +69,8 @@
                         <a class="profile-element profile-website" hrerf=""><i
                                 class="octicon octicon-location"></i>&nbsp;Vitoria-Gasteiz, Spain</a>
                         <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined November 2012</h2>
-                        <a href="{{ route('users.edit', Auth::user()->id ) }}" class="profile-element profile-website">Profilini Düzenle</a>
+                        <a href="{{ route('users.edit', Auth::user()->id) }}"
+                            class="profile-element profile-website">Profilini Düzenle</a>
 
 
                     </div>
@@ -89,7 +94,7 @@
                     <ol class="tweet-list">
                         <li class="tweet-card">
                             <div class="tweet-content">
-                                <div class="tweet-header">  
+                                <div class="tweet-header">
                                     <span class="fullname">
                                         <strong> {{ Auth::user()->name }}</strong>
                                     </span>
@@ -97,9 +102,7 @@
                                     <span class="tweet-time">- Jul 18</span>
                                 </div>
                                 <a>
-                                    <img class="tweet-card-avatar"
-                                        src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                        alt="">
+                                    <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
                                 </a>
                                 <div class="tweet-text">
                                     <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
@@ -144,9 +147,7 @@
                             <ol class="tweet-list">
                                 <li class="tweet-card">
                                     <div class="tweet-content">
-                                        <img class="tweet-card-avatar"
-                                            src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                            alt="">
+                                        <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
                                         <div class="tweet-header">
                                             <span class="fullname">
                                                 <strong>Jon Vadillo</strong>
@@ -159,9 +160,7 @@
                                 </li>
                                 <li class="tweet-card">
                                     <div class="tweet-content">
-                                        <img class="tweet-card-avatar"
-                                            src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                            alt="">
+                                        <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
                                         <div class="tweet-header">
                                             <span class="fullname">
                                                 <strong>Jon Vadillo</strong>
@@ -174,9 +173,7 @@
                                 </li>
                                 <li class="tweet-card">
                                     <div class="tweet-content">
-                                        <img class="tweet-card-avatar"
-                                            src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                            alt="">
+                                        <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
                                         <div class="tweet-header">
                                             <span class="fullname">
                                                 <strong>Jon Vadillo</strong>
@@ -194,6 +191,7 @@
                 </div>
             </div>
         </div>
+    
 
 
 </x-app-layout>

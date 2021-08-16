@@ -23,7 +23,7 @@
                     <a class="nav-link" href="#"><i class="octicon octicon-bell"></i> Notifications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="octicon octicon-book"></i> Help Center </a>
+                    <a class="nav-link" href="https://quickabdest.com/"><i class="octicon octicon-book"></i> Help Center </a>
                 </li>
 
             </ul>

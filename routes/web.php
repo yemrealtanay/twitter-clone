@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TwitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('users', UserController::class);
+
+Route::resource('twits', TwitController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
