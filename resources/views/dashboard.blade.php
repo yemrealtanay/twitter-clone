@@ -72,6 +72,14 @@
                 <!-- End; Left column -->
                 <!-- Center content column -->
                 <div class="col-6">
+
+                    <div class="form-group">
+                        <label class="text-bold m-2 text-xl text-gray-800" for="tweetFormControlTextarea1">Lets Tweet!</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <button class="btn btn-search-bar m-3">Tweet</button>
+                    </form>
+
                     <ol class="tweet-list">
                         <li class="tweet-card">
                             <div class="tweet-content">

@@ -43,6 +43,7 @@ class User extends Authenticatable
         'website',
         'password',
         'image_path',
+        'bg_image_path'
     ];
 
     protected $guarded = [

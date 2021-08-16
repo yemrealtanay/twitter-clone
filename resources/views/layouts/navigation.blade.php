@@ -13,14 +13,17 @@
             <!-- Navbar navigation links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span
+                    <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Feed <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="octicon octicon-zap"></i> Moments</a>
+                    <a class="nav-link" href="#"><i class="octicon octicon-zap"></i> Explore </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="octicon octicon-bell"></i> Notifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="octicon octicon-book"></i> Help Center </a>
                 </li>
 
             </ul>
