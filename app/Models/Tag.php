@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+
+    public function twits()
+    {
+        return $this->belongsToMany(Twit::class);
+    }
+
+    public function comments()
+    {
+        return $this->belongsToMany(Comment::class);
+    }
 }

@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->date('birth_date')->nullable();                 // Year-Month-Day format
             $table->text('bio')->nullable();
             $table->string('image_path')->nullable();               // For profile picture (avatar)
-            $table->string('bg_image_path')->nullable();               // For profile background (bg)
+            $table->string('bg_image_path')->nullable();            // For profile background (bg)
             $table->string('website')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

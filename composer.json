@@ -20,7 +20,8 @@
         "mockery/mockery": "^1.4.2",
         "nascent-africa/jetstrap": "^2.4",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "phpunit/phpunit": "^9.3.3",
+        "sven/artisan-view": "^3.4"
     },
     "autoload": {
         "psr-4": {
