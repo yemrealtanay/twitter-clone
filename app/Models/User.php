@@ -18,20 +18,10 @@ class User extends Authenticatable
         return $this->hasMany(Twit::class);
     }
 
-    /* public function likes()
+    public function profile_feed()
     {
-        return $this->belongsToMany()
-    } */
-
-    // public function followers()
-    // {
-    //     return $this->belongsToMany(User::class, 'users_followers');
-    // }
-//
-    // public function following()
-    // {
-    //     return $this->belongsToMany(User::class, 'users_following');
-    // }
+        return $this->belongsToMany(Twit::class, 'feed');
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -73,9 +63,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function getNicknameAttribute()
-    {
-        return '@' . implode(array_map('trim', explode(" ", $this->name)));
-    }
 }

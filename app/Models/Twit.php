@@ -11,7 +11,6 @@ class Twit extends Model
 
     protected $fillable = [
         'content',
-        'reply_to',
     ];
 
     protected $guarded = [
