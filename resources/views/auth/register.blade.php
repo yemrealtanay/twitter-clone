@@ -20,6 +20,7 @@
                     <x-input id="name" type="text" name="name" :value="old('name')" required autofocus />
                 </div>
 
+                <!-- Nickname -->
                 <div class="form-group">
                     <x-label for="nickname" :value="__('Nickname')" />
 
