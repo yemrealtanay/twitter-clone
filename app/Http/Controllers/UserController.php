@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -57,7 +58,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -69,7 +70,31 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        // $user->nickname = $user->getNickname($request->name);
+        $request->validate([
+            'user_id' => 'required'           
+        ]);
+
+        $img = $request->file('avatar');
+        $bgimg = $request->file('bgimg');
+
+        $newAvatarName = uniqid() . '.' . $user->nickname . '.' . $img->getClientOriginalExtension();
+        $newBgimgName = uniqid() . '.' . $user->nickname . '.' . $bgimg->getClientOriginalExtension();
+
+        $destinationPath = public_path('images');
+
+        $img->move($destinationPath, $newAvatarName);
+        $bgimg->move($destinationPath, $newBgimgName);
+
+        $user->nickname = $request->nickname;
+        $user->bio = $request->bio;
+        $user->date = $request->date;
+        $user->website = $request->website;
+        $user->image_path = $newAvatarName;
+        $user->bgimg_path = $newBgimgName;
+
+        $user->save();
+        
+        return redirect()->route('dashboard');
     }
 
     /**

@@ -65,7 +65,6 @@
                         <a class="profile-element profile-website" hrerf=""><i
                                 class="octicon octicon-location"></i>&nbsp;Vitoria-Gasteiz, Spain</a>
                         <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined November 2012</h2>
-                        <a href="{{ route('users.edit', Auth::user()) }}" class="profile-element profile-website">Profilini Düzenle</a>
 
 
                     </div>
@@ -73,63 +72,20 @@
                 <!-- End; Left column -->
                 <!-- Center content column -->
                 <div class="col-6">
-                    <form action="">
-                        <div class="form-group">
-                            <div class="">
-                                <label class="text-bold m-2 text-xl text-gray-800" for="tweetFormControlTextarea1">Lets
-                                    Tweet!</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <div class="d-flex justify-content-end my-1">
-                                <button class="btn btn-search-bar">Tweet</button>
-                            </div>
+                    <!-- Profile Edit Content -->
+
+                    <form action="{{ route('users.update' $user) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="m-5">
+                            <label for="nickname">Edit Your Nickname</label>
                         </div>
+                            <input class="form-control form-control-lg" type="text" placeholder="{{ $user->nickname }}">
+                        
                     </form>
 
-                    <ol class="tweet-list">
-                        <li class="tweet-card">
-                            <div class="tweet-content">
-                                <div class="tweet-header">  
-                                    <span class="fullname">
-                                        <strong> {{ Auth::user()->name }}</strong>
-                                    </span>
-                                    <span class="username">{{ Auth::user()->nickname }}</span>
-                                    <span class="tweet-time">- Jul 18</span>
-                                </div>
-                                <a>
-                                    <img class="tweet-card-avatar"
-                                        src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                        alt="">
-                                </a>
-                                <div class="tweet-text">
-                                    <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
-                                        Mozilla!<br>Resuelto: Corregido – Una breve historia sobre un error reportado
-                                        por la comunidad <a href="https://t.co/dqg5hVQXA0" class="twitter-timeline-link"
-                                            target="_blank"><span class="">https://www.mozilla-hispano.org/</span></a>
-                                        <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
-                                            class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
-                                        <a href="" class="twitter-hashtag" dir="ltr"></a>
-                                    </p>
-                                </div>
-                                <div class="tweet-footer">
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-heart" aria-hidden="true"></i><span> 202</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-mail" aria-hidden="true"></i><span> 155</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
+                    
 
-                    </ol>
-                    <!-- End: tweet list -->
+
                 </div>
                 <!-- End: Center content column -->
                 <div class="col right-col">
