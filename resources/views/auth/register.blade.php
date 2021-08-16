@@ -20,6 +20,12 @@
                     <x-input id="name" type="text" name="name" :value="old('name')" required autofocus />
                 </div>
 
+                <div class="form-group">
+                    <x-label for="nickname" :value="__('Nickname')" />
+
+                    <x-input id="nickname" type="text" name="nickname" :value="old('nickname')" required/>
+                </div>
+
                 <!-- Email Address -->
                 <div class="form-group">
                     <x-label for="email" :value="__('Email')" />

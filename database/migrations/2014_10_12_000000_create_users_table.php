@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->text('bio')->nullable();
             $table->string('image_path')->nullable();               // For profile picture (avatar)
             $table->string('bg_image_path')->nullable();            // For profile background (bg)
-            $table->string('website')->unique();
+            $table->string('website')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
 class CreateTwitsTable extends Migration
 {
@@ -17,6 +18,7 @@ class CreateTwitsTable extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->text('content');
+            $table->integer('parent_id')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,25 @@ class Twit extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'content',
+        'reply_to',
+    ];
+
+    protected $guarded = [
+        'id',
+    ];
+
+    public function parent()
+    {
+        return $this->belongsTo(Twit::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Twit::class, 'parent_id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -17,10 +36,5 @@ class Twit extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
-    }
-
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
     }
 }

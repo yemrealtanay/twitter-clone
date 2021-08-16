@@ -9,13 +9,16 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $guarded = [
+        'id',
+    ];
+
+    protected $fillable = [
+        'hashtag',
+    ];
+
     public function twits()
     {
         return $this->belongsToMany(Twit::class);
-    }
-
-    public function comments()
-    {
-        return $this->belongsToMany(Comment::class);
     }
 }

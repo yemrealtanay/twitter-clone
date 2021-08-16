@@ -13,12 +13,15 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, CanFollow, CanBeFollowed;
 
-
-
     public function twits()
     {
         return $this->hasMany(Twit::class);
     }
+
+    /* public function likes()
+    {
+        return $this->belongsToMany()
+    } */
 
     // public function followers()
     // {
@@ -49,6 +52,7 @@ class User extends Authenticatable
 
     protected $guarded = [
         'isAdmin',
+        'id',
     ];
 
     /**
@@ -70,9 +74,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getNickname($name)
+    public function getNicknameAttribute()
     {
-        $nickname = '@' . implode(array_map('trim', explode(" ", $name)));
-        return $nickname;
+        return '@' . implode(array_map('trim', explode(" ", $this->name)));
     }
 }

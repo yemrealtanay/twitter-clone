@@ -4,8 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Twit;
+use App\Models\Tag;
 
-class CreateCommentsTable extends Migration
+class CreateTwitTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +15,11 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(User::class);
-            $table->text('content');
-            $table->timestamps();
+        Schema::create('twit_tag', function (Blueprint $table) {
+            $table->foreignIdFor(Twit::class);
+            $table->foreignIdFor(Tag::class);
+
+            $table->unique(['twit_id', 'tag_id']);
         });
     }
 
@@ -29,6 +30,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('twit_tag');
     }
 }
