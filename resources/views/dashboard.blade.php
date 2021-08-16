@@ -88,7 +88,7 @@
                     <ol class="tweet-list">
                         <li class="tweet-card">
                             <div class="tweet-content">
-                                <div class="tweet-header">
+                                <div class="tweet-header">  
                                     <span class="fullname">
                                         <strong> {{ Auth::user()->name }}</strong>
                                     </span>

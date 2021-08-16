@@ -15,6 +15,8 @@ class CreateTwitsTable extends Migration
     {
         Schema::create('twits', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class);
+            $table->text('content');
             $table->timestamps();
         });
     }
