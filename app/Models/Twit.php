@@ -34,7 +34,7 @@ class Twit extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'twit_tag');
     }
 
     public function diverge_tags_from_content($content)
