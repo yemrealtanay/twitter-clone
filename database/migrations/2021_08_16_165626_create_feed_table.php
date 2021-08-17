@@ -16,8 +16,9 @@ class CreateFeedTable extends Migration
     public function up()
     {
         Schema::create('feed', function (Blueprint $table) {
-            $table->foreignIdFor(Twit::class);
+            $table->id();
             $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Twit::class);
             $table->boolean('is_retwit')->default(false);
             $table->timestamps();
         });

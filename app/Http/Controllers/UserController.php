@@ -106,4 +106,10 @@ class UserController extends Controller
     {
         //
     }
+
+    public function follow(Request $request, User $user){
+        $user->addFollower($request->user());
+
+        return redirect()->route('dashboard');
+    }
 }

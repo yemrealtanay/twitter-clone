@@ -8,8 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Hypefactors\Laravel\Follow\Traits\CanBeFollowed;
 use Hypefactors\Laravel\Follow\Traits\CanFollow;
+use Hypefactors\Laravel\Follow\Contracts\CanFollowContract;
+use Hypefactors\Laravel\Follow\Contracts\CanBeFollowedContract;
 
-class User extends Authenticatable
+class User extends Authenticatable implements  CanFollowContract, CanBeFollowedContract
 {
     use HasFactory, Notifiable, CanFollow, CanBeFollowed;
 

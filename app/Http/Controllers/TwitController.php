@@ -4,17 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Twit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 
 class TwitController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $userIds = $request->user()->followings()->pluck('id')->toArray();
+        $userIds[] = $request->user()->id;
+        $twits = Twit::with(['user'])->whereIn('user_id', $userIds)->orderBy('created_at', 'desc')->get();
+
+        return view('twit.index', compact('twits'));
     }
 
     /**
@@ -35,7 +43,17 @@ class TwitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'content' => 'required|max:140',
+        ]);
+
+        $twit = new Twit;
+        $twit->user_id = $request->user()->id;
+        $twit->content = $request->content;
+
+        $twit->save();
+
+        return redirect('/dashboard');
     }
 
     /**

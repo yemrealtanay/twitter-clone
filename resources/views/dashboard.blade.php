@@ -13,9 +13,6 @@
           </div>
         </div>
         
-    
-            
-
         <nav class="navbar profile-stats">
             <div class="container">
                 <div class="row">
@@ -71,48 +68,43 @@
                         <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined November 2012</h2>
                         <a href="{{ route('users.edit', Auth::user()->id) }}"
                             class="profile-element profile-website">Profilini Düzenle</a>
-
-
+                        </div>
                     </div>
-                </div>
                 <!-- End; Left column -->
                 <!-- Center content column -->
                 <div class="col-6">
-                    <form action="">
+                    <form action="{{ route('twits.store') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <div class="">
                                 <label class="text-bold m-2 text-xl text-gray-800" for="tweetFormControlTextarea1">Lets
                                     Tweet!</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
                             </div>
                             <div class="d-flex justify-content-end my-1">
-                                <button class="btn btn-search-bar">Tweet</button>
+                                <button type="submit" class="btn btn-primary">Tweet</button>
                             </div>
                         </div>
                     </form>
 
+                    <a href="{{ route('twits.index') }}">Twitleri Gör</a>
+
                     <ol class="tweet-list">
+                        @foreach($twits as $twit)
                         <li class="tweet-card">
                             <div class="tweet-content">
                                 <div class="tweet-header">
                                     <span class="fullname">
-                                        <strong> {{ Auth::user()->name }}</strong>
+                                        <strong> {{ $twit->user->name }}</strong>
                                     </span>
-                                    <span class="username">{{ Auth::user()->nickname }}</span>
-                                    <span class="tweet-time">- Jul 18</span>
+                                    <span class="username">{{ $twit->user->nickname }}</span>
+                                    <span class="tweet-time">- {{ $twit->date_create }}</span>
                                 </div>
                                 <a>
                                     <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
                                 </a>
                                 <div class="tweet-text">
-                                    <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
-                                        Mozilla!<br>Resuelto: Corregido – Una breve historia sobre un error reportado
-                                        por la comunidad <a href="https://t.co/dqg5hVQXA0" class="twitter-timeline-link"
-                                            target="_blank"><span class="">https://www.mozilla-hispano.org/</span></a>
-                                        <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
-                                            class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
-                                        <a href="" class="twitter-hashtag" dir="ltr"></a>
-                                    </p>
+                                    <p class="" lang="es" data-aria-label-part="0"> {{ $twit->content }}</p>
                                 </div>
                                 <div class="tweet-footer">
                                     <a class="tweet-footer-btn">
@@ -130,7 +122,7 @@
                                 </div>
                             </div>
                         </li>
-
+                        @endforeach
                     </ol>
                     <!-- End: tweet list -->
                 </div>
@@ -138,52 +130,28 @@
                 <div class="col right-col">
                     <div class="content-panel">
                         <div class="panel-header">
-                            <h4>Who to follow</h4><small><a href="">Refresh</a></small><small><a href="">View
-                                    all</a></small>
+                            <h4>Who to follow</h4><small><a href="">Refresh</a></small><small><a href="">View all</a></small>
                         </div>
                         <!-- Who to Follow panel -->
                         <div class="panel-content">
                             <!--Follow list -->
                             <ol class="tweet-list">
+                                @foreach($users as $user)
                                 <li class="tweet-card">
                                     <div class="tweet-content">
                                         <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
                                         <div class="tweet-header">
                                             <span class="fullname">
-                                                <strong>Jon Vadillo</strong>
+                                                <strong> {{ $user->name }}</strong>
                                             </span>
-                                            <span class="username">@JonVadillo</span>
+                                            <span class="username">{{ $user->nickname }}</span>
                                         </div>
 
-                                        <button class="btn btn-follow">Follow</button>
+                                        <a href="{{ route('users.follow', $user) }}" class="btn btn-follow">Follow</a>
+                                        
                                     </div>
                                 </li>
-                                <li class="tweet-card">
-                                    <div class="tweet-content">
-                                        <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
-                                        <div class="tweet-header">
-                                            <span class="fullname">
-                                                <strong>Jon Vadillo</strong>
-                                            </span>
-                                            <span class="username">@JonVadillo</span>
-                                        </div>
-
-                                        <button class="btn btn-follow">Follow</button>
-                                    </div>
-                                </li>
-                                <li class="tweet-card">
-                                    <div class="tweet-content">
-                                        <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
-                                        <div class="tweet-header">
-                                            <span class="fullname">
-                                                <strong>Jon Vadillo</strong>
-                                            </span>
-                                            <span class="username">@JonVadillo</span>
-                                        </div>
-
-                                        <button class="btn btn-follow">Follow</button>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ol>
                             <!--END: Follow list -->
                         </div>

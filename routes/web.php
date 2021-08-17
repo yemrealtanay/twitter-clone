@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TwitController;
+use App\Models\User;
+
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +24,14 @@ Route::get('/', function () {
 
 Route::resource('users', UserController::class);
 
+Route::get('users/{user}/follow', [UserController::class, 'follow'])->name('users.follow');
+
 Route::resource('twits', TwitController::class);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $users = User::all();
+    $twits = Auth::user()->twits;
+    return view('dashboard', compact('twits', 'users'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

@@ -93,7 +93,8 @@
                        <label for="bgimg" class="mt-3">Upload Background</label>
                        <input type="file" class="form-control-file" id="file_bg" name="bgimg" accept="image/*">
 
-                       <button type="submit" class="btn btn-primary mt-3">Update</button>
+                       <a href="" type="submit" class="btn btn-primary mt-3">Update</a> 
+                      {{--  <button type="submit" class="btn btn-primary mt-3">Update</button>--}}
                     </form>
 
                     
