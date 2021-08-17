@@ -87,14 +87,13 @@
                        <label for="website" class="mt-3">Web Address</label>
                        <input class="form-control form-control-lg" type="text" name="website">
                        
-                       <label for="avatar" class="mt-3">Upload Avatar</label>
+                       <label for="file_avatar" class="mt-3">Upload Avatar</label>
                        <input type="file" class="form-control-file" id="file_avatar" name="avatar" accept="image/*">
                        
-                       <label for="bgimg" class="mt-3">Upload Background</label>
+                       <label for="file_bg" class="mt-3">Upload Background</label>
                        <input type="file" class="form-control-file" id="file_bg" name="bgimg" accept="image/*">
 
-                       <a href="" type="submit" class="btn btn-primary mt-3">Update</a> 
-                      {{--  <button type="submit" class="btn btn-primary mt-3">Update</button>--}}
+                       <button type="submit" class="btn btn-primary mt-3">Update</button>
                     </form>
 
                     

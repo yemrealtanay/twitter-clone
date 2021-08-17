@@ -70,8 +70,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        
         $request->validate([
-            'user_id' => 'required'           
+            'bio' => 'nullable|string|min:10',
+            'nickname' => 'required|string|max:30',
+            'website' => 'nullable|url',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bgimg' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $img = $request->file('avatar');
