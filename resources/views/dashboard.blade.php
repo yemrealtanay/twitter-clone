@@ -24,19 +24,19 @@
                             <li class="profile-stats-item-active">
                                 <a>
                                     <span class="profile-stats-item profile-stats-item-label">Tweets</span>
-                                    <span class="profile-stats-item profile-stats-item-number">51</span>
+                                    <span class="profile-stats-item profile-stats-item-number">{{ Auth::user()->twits()->count() }}</span>
                                 </a>
                             </li>
                             <li>
                                 <a>
                                     <span class="profile-stats-item profile-stats-item-label">Following</span>
-                                    <span class="profile-stats-item profile-stats-item-number">420</span>
+                                    <span class="profile-stats-item profile-stats-item-number">{{ Auth::user()->followings()->count() }}</span>
                                 </a>
                             </li>
                             <li>
                                 <a>
                                     <span class="profile-stats-item profile-stats-item-label">Followers</span>
-                                    <span class="profile-stats-item profile-stats-item-number">583</span>
+                                    <span class="profile-stats-item profile-stats-item-number">{{ Auth::user()->followers()->count() }}</span>
                                 </a>
                             </li>
                             <li>
@@ -63,9 +63,9 @@
                         <h2 class="profile-element"><a>{{ Auth::user()->nickname }} </a></h2>
                         <a class="profile-element profile-website" hrerf=""><i
                                 class="octicon octicon-link"></i>{{ Auth::user()->email }} </a>
-                        <a class="profile-element profile-website" hrerf=""><i
-                                class="octicon octicon-location"></i>&nbsp;Vitoria-Gasteiz, Spain</a>
-                        <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined November 2012</h2>
+                        <a class="profile-element profile-website" hrerf=""> {{ Auth::user()->website }}<i
+                                class="octicon octicon-location"></i>{{ Auth::user()->location }}</a>
+                        <h2 class="profile-element"><i class="octicon octicon-calendar"></i>Joined {{ Auth::user()->created_at }}</h2>
                         <a href="{{ route('users.edit', Auth::user()->id) }}"
                             class="profile-element profile-website">Profilini Düzenle</a>
                         </div>

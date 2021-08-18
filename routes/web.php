@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TwitController;
 use App\Models\User;
 
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -29,7 +30,7 @@ Route::get('users/{user}/follow', [UserController::class, 'follow'])->name('user
 Route::resource('twits', TwitController::class);
 
 Route::get('/dashboard', function () {
-    $users = User::all();
+    $users = User::where('id', '!=', auth()->id())->get();
     $twits = Auth::user()->twits;
     return view('dashboard', compact('twits', 'users'));
 })->middleware(['auth'])->name('dashboard');
