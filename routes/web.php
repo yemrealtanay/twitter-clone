@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TwitController;
 use App\Models\User;
+use App\Models\Twit;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,7 @@ Route::resource('twits', TwitController::class);
 
 Route::get('/dashboard', function () {
     $users = User::where('id', '!=', auth()->id())->get();
-    $twits = Auth::user()->twits;
+    $twits = Twit::all();
     return view('dashboard', compact('twits', 'users'));
 })->middleware(['auth'])->name('dashboard');
 

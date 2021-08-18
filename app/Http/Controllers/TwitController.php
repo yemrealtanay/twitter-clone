@@ -18,11 +18,11 @@ class TwitController extends Controller
      */
     public function index(Request $request)
     {
-        $userIds = $request->user()->followings()->pluck('id')->toArray();
+        $userIds = $request->user()->followings->pluck('id')->toArray();
         $userIds[] = $request->user()->id;
         $twits = Twit::with(['user'])->whereIn('user_id', $userIds)->orderBy('created_at', 'desc')->get();
 
-        return view('twit.index', compact('twits'));
+        return view('profile', compact('twits'));
     }
 
     /**

@@ -13,11 +13,11 @@
             <!-- Navbar navigation links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Feed <span
+                    <a class="nav-link" href="{{ route('dashboard') }}"><i class="octicon octicon-home" aria-hidden="true"></i> Feed <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="octicon octicon-person"></i> Profile </a>
+                    <a class="nav-link" href="{{ route('twits.index') }}"><i class="octicon octicon-person"></i> Profile </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="octicon octicon-zap"></i> Explore </a>
@@ -33,7 +33,7 @@
                 </li>
 
             </ul>
-            
+
         </div>
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
