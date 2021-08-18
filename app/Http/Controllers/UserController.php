@@ -70,18 +70,18 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-                
+
          $request->validate([
             'bio' => 'nullable|string|min:10',
             'nickname' => 'required|string|max:30',
             'website' => 'nullable',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'bgimg' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048' 
-        ]); 
+            'bgimg' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
 
         $img = $request->file('avatar');
         $bgimg = $request->file('bgimg');
-        
+
 
         $newAvatarName = uniqid() . '.' . $request->nickname . '.' . $img->getClientOriginalExtension();
         $newBgimgName = uniqid() . '.' . $request->nickname . '.' . $bgimg->getClientOriginalExtension();
@@ -98,7 +98,7 @@ class UserController extends Controller
         $user->bg_image_path = $newBgimgName;
 
         $user->save();
-        
+
         return redirect()->route('dashboard');
     }
 
@@ -113,9 +113,14 @@ class UserController extends Controller
         //
     }
 
-    public function follow(Request $request, User $user){
+    /* public function follow(Request $request, User $user){
         $user->addFollower($request->user());
 
         return redirect()->route('dashboard');
     }
+
+    public function unfollow(Request $request, User $user)
+    {
+        $user->
+    } */
 }

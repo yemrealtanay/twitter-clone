@@ -8,9 +8,11 @@
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "hypefactors/laravel-follow": "^7.0",
         "laravel/framework": "^8.54",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "overtrue/laravel-favorite": "^4.0",
+        "overtrue/laravel-follow": "^3.0",
+        "overtrue/laravel-like": "^4.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
