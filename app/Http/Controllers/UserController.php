@@ -70,17 +70,18 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        
-        $request->validate([
+                
+         $request->validate([
             'bio' => 'nullable|string|min:10',
             'nickname' => 'required|string|max:30',
-            'website' => 'nullable|url',
+            'website' => 'nullable',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'bgimg' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
+            'bgimg' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048' 
+        ]); 
 
         $img = $request->file('avatar');
         $bgimg = $request->file('bgimg');
+        
 
         $newAvatarName = uniqid() . '.' . $request->nickname . '.' . $img->getClientOriginalExtension();
         $newBgimgName = uniqid() . '.' . $request->nickname . '.' . $bgimg->getClientOriginalExtension();
@@ -94,7 +95,7 @@ class UserController extends Controller
         $user->bio = $request->bio;
         $user->website = $request->website;
         $user->image_path = $newAvatarName;
-        $user->bgimg_path = $newBgimgName;
+        $user->bg_image_path = $newBgimgName;
 
         $user->save();
         

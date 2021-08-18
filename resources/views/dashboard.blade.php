@@ -2,12 +2,12 @@
     <div class="main-container">
         
         <div class="row profile-background">
-            <img class="max-h-350 max-w-1200" src="https://source.unsplash.com/1200x350" alt="">
+            <img class="max-h-350 max-w-1200 w-100" src="{{ 'images/' . Auth::user()->bg_image_path }}" alt="">
           <div class="container">
             
             <div class="avatar-container">
               <div class="avatar">
-                <img class="max-h-350 max-w-1200" src="https://source.unsplash.com/350x350" alt="">
+                <img class="avatar-container w-75" src=" {{ 'images/' . Auth::user()->image_path }}" alt="">
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@
                                     <span class="tweet-time">- {{ $twit->date_create }}</span>
                                 </div>
                                 <a>
-                                    <img class="tweet-card-avatar" src="https://source.unsplash.com/random" alt="">
+                                    <img class="tweet-card-avatar" src="{{ 'images/' . Auth::user()->image_path }}" alt="">
                                 </a>
                                 <div class="tweet-text">
                                     <p class="" lang="es" data-aria-label-part="0"> {{ $twit->content }}</p>
