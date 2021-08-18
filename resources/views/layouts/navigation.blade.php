@@ -17,32 +17,23 @@
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="octicon octicon-person"></i> Profile </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="octicon octicon-zap"></i> Explore </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="octicon octicon-bell"></i> Notifications</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="octicon octicon-bookmark"></i> Bookmarks</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="https://quickabdest.com/"><i class="octicon octicon-book"></i> Help Center </a>
                 </li>
 
             </ul>
-            <!-- END: Navbar navigation links -->
-            <!-- Navbar Search form -->
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control input-search" placeholder="Search Twitter" name="srch-term"
-                        id="srch-term">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default btn-search" type="submit"><i
-                                class="octicon octicon-search navbar-search-icon"></i></button>
-                    </div>
-                </div>
-            </form>
-            <!-- END: Navbar Search form -->
-          
-            <!-- Navbar Tweet button -->
-            <button class="btn btn-search-bar">Tweet</button>
+            
         </div>
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
