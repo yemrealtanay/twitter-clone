@@ -113,14 +113,16 @@ class UserController extends Controller
         //
     }
 
-    /* public function follow(Request $request, User $user){
-        $user->addFollower($request->user());
+    public function follow(Request $request, User $user){
+        $request->user()->follow($user);
 
         return redirect()->route('dashboard');
     }
 
     public function unfollow(Request $request, User $user)
     {
-        $user->
-    } */
+        $request->user()->unfollow($user);
+
+        return redirect()->route('dashboard');
+    }
 }

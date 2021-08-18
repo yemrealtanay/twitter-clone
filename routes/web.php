@@ -26,6 +26,8 @@ Route::get('/', function () {
 Route::resource('users', UserController::class);
 
 Route::get('users/{user}/follow', [UserController::class, 'follow'])->name('users.follow');
+Route::get('users/{user}/unfollow', [UserController::class, 'unfollow'])->name('users.unfollow');
+Route::get('twits/{twit}/retwit', [TwitController::class, 'retwit'])->name('twits.retwit');
 
 Route::resource('twits', TwitController::class);
 

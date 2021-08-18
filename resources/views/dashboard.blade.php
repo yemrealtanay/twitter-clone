@@ -1,10 +1,10 @@
 <x-app-layout>
     <div class="main-container">
-        
+
         <div class="row profile-background">
             <img class="max-h-350 max-w-1200 w-100" src="{{ 'images/' . Auth::user()->bg_image_path }}" alt="">
           <div class="container">
-            
+
             <div class="avatar-container">
               <div class="avatar">
                 <img class="avatar-container w-75" src=" {{ 'images/' . Auth::user()->image_path }}" alt="">
@@ -12,7 +12,7 @@
             </div>
           </div>
         </div>
-        
+
         <nav class="navbar profile-stats">
             <div class="container">
                 <div class="row">
@@ -110,7 +110,7 @@
                                     <a class="tweet-footer-btn">
                                         <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
                                     </a>
-                                    <a class="tweet-footer-btn">
+                                    <a class="tweet-footer-btn" href="{{ route('twits.retwit', $twit) }}">
                                         <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
                                     </a>
                                     <a class="tweet-footer-btn">
@@ -148,7 +148,7 @@
                                         </div>
 
                                         <a href="{{ route('users.follow', $user) }}" class="btn btn-follow">Follow</a>
-                                        
+
                                     </div>
                                 </li>
                                 @endforeach
@@ -159,7 +159,7 @@
                 </div>
             </div>
         </div>
-    
+
 
 
 </x-app-layout>

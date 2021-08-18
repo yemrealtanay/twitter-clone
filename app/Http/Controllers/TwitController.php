@@ -56,6 +56,17 @@ class TwitController extends Controller
         return redirect('/dashboard');
     }
 
+    public function retwit(Request $request, Twit $twit)
+    {
+        $request->user()->profile_feed()->attach($twit);
+        return redirect('/dashboard');
+    }
+
+    public function like(Request $request, Twit $twit)
+    {
+        return redirect('/dashboard');
+    }
+
     /**
      * Display the specified resource.
      *
