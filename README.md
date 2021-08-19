@@ -1,3 +1,3 @@
-##Project repository moved... New repository link;
+#Project repository moved... New repository link;
 
 https://github.com/furkanmeraloglu/baby-twitter
